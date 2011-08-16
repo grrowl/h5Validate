@@ -148,6 +148,12 @@
 				});
 				return valid;
 			},
+			checkAllValid: function (settings) {
+				$(this).find('input, textarea, select').each(function() {
+					settings.validate.call(this, settings);
+				});
+				return $(this).h5Validate('allValid');
+			},
 			validate: function (settings) {
 				// Get the HTML5 pattern attribute if it exists.
 				// ** TODO: If a pattern class exists, grab the pattern from the patternLibrary, but the pattern attrib should override that value.
